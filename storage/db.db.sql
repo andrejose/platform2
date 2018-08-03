@@ -1,0 +1,25 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS `session` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`timetablehour`	INTEGER NOT NULL,
+	`timetableminute`	INTEGER NOT NULL
+);
+CREATE TABLE IF NOT EXISTS `questionnaire` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`title`	INTEGER,
+	`link`	TEXT,
+	`session_id`	INTEGER NOT NULL,
+	`sort`	INTEGER NOT NULL DEFAULT 0,
+	`delay`	INTEGER NOT NULL DEFAULT 0
+);
+CREATE TABLE IF NOT EXISTS `configuration` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`title`	TEXT NOT NULL,
+	`intro`	TEXT,
+	`answered`	TEXT,
+	`access`	TEXT,
+	`back`	TEXT,
+	`stop`	TEXT,
+	`password`	TEXT
+);
+COMMIT;
