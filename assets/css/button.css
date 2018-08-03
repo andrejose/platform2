@@ -1,0 +1,70 @@
+.button
+{
+    display:inline-block;
+    text-transform: none;
+    letter-spacing: 0;
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    margin: 0 0 20px;
+    white-space: nowrap;
+    padding:10px 30px;
+    background: #0d75b2;
+    border: 1px solid #0d75b2;
+    color: #FFF;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+.button:hover, .button:active
+{
+    text-decoration: none;
+    color: #0d75b2;
+    border-color: #0d75b2;
+    background: #FFF;
+}
+.button span
+{
+    display: inline-block;
+    position: relative;
+    padding-right: 0;
+
+    transition: padding-right 0.5s;
+}
+
+.button span:after
+{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: -18px;
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+    margin-top: -10px;
+    background: rgba(0, 0, 0, 0);
+    border: 3px solid #FFF;
+    border-top: none;
+    border-left: none;
+    transition: opacity 0.5s, top 0.5s, right 0.5s;
+    transform: rotate(-45deg);
+}
+.button:hover span, .button:active span
+{
+    padding-right: 30px;
+}
+.button:hover span:after, .button:active span:after
+{
+    transition: opacity 0.5s, top 0.5s, right 0.5s;
+    opacity: 1;
+    border-color: #333;
+    right: 0;
+    top: 60%;
+}
+
+.button_error {
+    display: block;
+    font-size: 16px;
+    margin: -20px 0 20px;
+}
